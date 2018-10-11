@@ -1,0 +1,29 @@
+<div class="wrapper">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+  <h2>Sign up</h2>
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="../../../assets/login1.png" id="icon" alt="User Icon" />
+    </div>
+
+    <!-- Login Form -->
+    <form [formGroup]="signup_group" novalidate (submit)="submit()">
+      <div class="content d-flex">
+          <input type="text"  class="input-style" placeholder="First Name" formControlName="first_name">
+          <input type="text"  class="input-style" placeholder="Last Name" formControlName="last_name">
+      </div>    
+      <input type="email"  class="input-style" placeholder="Email" formControlName="email" autocomplete="off"><br>
+      <small class="error_message" *ngIf="signup_group.get('email').hasError('email') && ( signup_group.get('email').dirty)">Please enter a valid email</small>
+      <input type="password"  class="input-style" placeholder="password" formControlName="password"><br>
+      <small class="error_message" *ngIf="signup_group.get('password').invalid && ( signup_group.get('password').dirty)">password must have min 8 characters</small>
+      <button class="btn-style" [disabled]="!signup_group.valid">Submit</button>
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+        <small><a class="underlineHover" routerLink="/login">Already have an Account ?</a></small>
+    </div>
+
+  </div>
+</div>>

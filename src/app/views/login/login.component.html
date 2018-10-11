@@ -1,0 +1,24 @@
+<div class="wrapper">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    <h2>Login</h2>
+    <!-- Icon -->
+    <div class="logo">
+      <img src="../../../assets/login1.png" id="icon" alt="User Icon" />
+    </div>
+
+    <!-- Login Form -->
+    <form [formGroup]="form_group" novalidate (submit)="submit()">
+      <input type="email" id="input-email" class="input-style" placeholder="Email" formControlName="email" autocomplete="off"><br>
+      <small class="error_message" *ngIf="form_group.get('email').hasError('email') && ( form_group.get('email').dirty)">Please enter a valid email</small>
+      <input type="password" id="input-password" class="input-style" placeholder="password" formControlName="password"><br>
+
+      <button class="btn-style" [disabled]="!form_group.valid">Log In</button>
+    </form>
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <small> <a class="underlineHover" href="#"  routerLink="/signup">Create an Account ?</a></small>
+    </div>
+
+  </div>
+</div>

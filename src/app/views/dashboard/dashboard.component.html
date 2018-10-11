@@ -1,0 +1,52 @@
+
+<nav>
+    <header>Welcome</header>
+    <section>
+        <div class="logo">
+                <img src="../../../assets/profile1.png" id="icon" alt="User Icon" />
+        </div>
+        <header> {{user.first_name | titlecase}} {{user.last_name}}</header>
+        <ul>
+            <li class="active">E-mail : {{user.email}}</li>
+            <li>Number of Notes <span>{{this.Note.length}}</span></li>
+            <li (click)="auth.logout()">Logout</li>
+        </ul>
+    </section>
+</nav>
+    <article>
+        <header>
+            <div class="title">Dashboard</div>
+            <div class="interval">
+                <ul>
+                    <li (click)="auth.logout()">Logout</li>
+                </ul>
+            </div>
+        </header>
+        <section>
+            <div class="card" id="main-card">
+                <input type="text" name="title" placeholder="Title" class="text-inputs" id="input-title" [(ngModel)]="title">
+                <textarea type="text" name="text" placeholder="Take a note.." class="text-inputs" id="input-feild" [(ngModel)]="content"></textarea>
+                <div class="icons">
+                    <span id="save_note" (click)="save()">Save</span>
+                </div>
+            </div>
+        </section>
+        <section>
+            <header>Your Notes</header>
+            <div class="note-container">
+                <div class="notes" *ngFor="let item of Note">
+                    <div class="notes-content">
+                            <input type="text" name="title" [placeholder]="item.title" class="text-inputs" id="input-title" [(ngModel)]="title_update">
+                            <textarea type="text" name="text" [placeholder]="item.content" class="text-inputs" id="input-feild" [(ngModel)]="content_update"></textarea>
+                        <div class="icons">
+                            <span  id="save_note" (click)="delete(item.id,user.id)">Delete</span>
+                            <span  id="save_note" (click)="update(item.id,user.id)">Update</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            
+        </section>
+    </article>
