@@ -7,7 +7,7 @@ app.use(express.static('./dist/NoteBookApp'));
 
 app.get('/*', function(req,res) {
     
-res.sendFile('./dist/NoteBookApp/index.html');
+res.sendFile(path.resolve('/dist/NoteBookApp/index.html'));
 });
 
 // Start the app by listening on the default Heroku port
