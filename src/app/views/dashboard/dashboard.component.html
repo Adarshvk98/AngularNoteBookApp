@@ -9,7 +9,7 @@
         <ul>
             <li class="active">E-mail : {{user.email}}</li>
             <li>Number of Notes <span>{{this.Note.length}}</span></li>
-            <li (click)="auth.logout()">Logout</li>
+            <li (click)="logout()">Logout</li>
         </ul>
     </section>
 </nav>
@@ -18,7 +18,7 @@
             <div class="title">Dashboard</div>
             <div class="interval">
                 <ul>
-                    <li (click)="auth.logout()">Logout</li>
+                    <li (click)="logout()">Logout</li>
                 </ul>
             </div>
         </header>
