@@ -1,7 +1,6 @@
-import { Component, OnInit,OnDestroy,ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit,OnDestroy } from '@angular/core';
 import {AuthenticationService} from '../../providers/authentication.service';
 import { ToastrService } from 'ngx-toastr';
-import {Router} from '@angular/router';
 import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-dashboard',
@@ -18,9 +17,7 @@ export class DashboardComponent implements OnInit, OnDestroy{
   private subscriptions: Subscription[] = [];
   constructor(
     private auth :AuthenticationService,
-    private alert: ToastrService,
-    private route:Router,
-    private cd: ChangeDetectorRef
+    private alert: ToastrService
     ) { }
 
   ngOnInit() {
